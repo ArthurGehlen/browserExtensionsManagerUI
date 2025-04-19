@@ -1,0 +1,62 @@
+:root {
+  --background_bg_gradient_DARK: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --background_bg_gradient_LIGHT: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+
+  --nav_title_color_LIGHT: hsl(227, 75%, 14%);
+  --nav_option_border_color: hsl(0, 0%, 78%);
+
+  --nav_option_bg_color_LIGHT: hsl(200, 60%, 99%);
+
+  --nav_option_active_bg_color_active_LIGHT: hsl(3, 77%, 44%);
+  --nav_option_active_font_color_active_LIGHT: hsl(200, 60%, 99%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  min-height: calc(100vh - 2rem);
+  background: var(--background_bg_gradient_LIGHT);
+  background-repeat: no-repeat;
+}
+
+main {
+  margin: 2rem auto;
+  padding-top: 2rem;
+  width: 85%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav h1 {
+  color: var(--nav_title_color_LIGHT);
+}
+
+nav .menu_options button {
+  cursor: pointer;
+  padding: .6rem .8rem;
+  border: 1px solid var(--nav_option_border_color);
+  border-radius: 20px;
+  background-color: var(--nav_option_bg_color_LIGHT);
+}
+
+nav .menu_options .active {
+  background-color: var(--nav_option_active_bg_color_active_LIGHT);
+  color: var(--nav_option_active_font_color_active_LIGHT);
+  border: none;
+}
+
+nav .menu_options button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.dark_mode {
+  background: var(--background_bg_gradient_DARK);
+}

@@ -1,0 +1,33 @@
+:root {
+    --header_bg_color_LIGHT: hsl(200, 60%, 99%);
+    --header_bg_color_DARK: hsla(225, 23%, 24%, 0.6);
+
+    --button_bg_color_LIGHT: hsl(0, 0%, 93%);
+    --button_bg_color_DARK: hsla(226, 11%, 37%, 0.2);
+}
+
+.header {
+    background-color: var(--header_bg_color_LIGHT);
+    margin: 2rem auto;
+    width: 85%;
+    padding: .6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.header button {
+    background-color: var(--button_bg_color_LIGHT);
+    padding: .4rem .6rem;
+    border: none;
+    border-radius: 10px;
+}
+
+.dark_mode .header {
+    background-color: var(--header_bg_color_DARK);
+}
+
+.dark_mode .header button {
+    background-color: var(--button_bg_color_DARK);
+}
