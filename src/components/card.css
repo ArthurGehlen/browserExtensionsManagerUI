@@ -1,5 +1,56 @@
-/*
-    Title = 500
-    button = 400
-    description = 400
-*/
+:root {
+    --card_bg_color_LIGHT: hsl(200, 60%, 99%);
+
+    --remove_button_border_color_LIGHT: hsl(0, 0%, 78%);
+    --remove_button_hover_bg_color: hsl(3, 77%, 44%);
+    --remove_button_focus_bg_color: hsl(3, 71%, 56%);
+}
+
+.card {
+    background-color: var(--card_bg_color_LIGHT);
+    min-width: calc(33% - .6rem);
+    max-width: 18.75rem;
+    height: 10rem;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.card .content {
+    height: 50%;
+    display: flex;
+    gap: 1rem;
+}
+
+.card .content .text strong {
+    font-size: 1.2rem;
+}
+
+.card .content .text p {
+    padding-top: .8rem;
+}
+
+.card .options {
+    height: 50%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.card .options button {
+    cursor: pointer;
+    padding: .4rem .8rem;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid var(--remove_button_border_color_LIGHT);
+    transition: .4s ease background-color, color, border;
+}
+
+.card .options button:hover {
+    background-color: var(--remove_button_hover_bg_color);
+    color: hsl(200, 60%, 99%);
+    border: 1px solid transparent;
+} 
+
+.card .options button:focus {
+    outline-color: var(--remove_button_focus_bg_color);
+}

@@ -3,11 +3,15 @@
   --background_bg_gradient_LIGHT: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
 
   --nav_title_color_LIGHT: hsl(227, 75%, 14%);
-  --nav_option_border_color: hsl(0, 0%, 78%);
+  --nav_option_border_color_LIGHT: hsl(0, 0%, 78%);
 
   --nav_option_bg_color_LIGHT: hsl(200, 60%, 99%);
+  --nav_option_border_color_hover_LIGHT: hsl(217, 61%, 90%);
+  --nav_option_font_color_hover_LIGHT: hsl(226, 11%, 37%);
+  --nav_option_focus_LIGHT: hsl(3, 71%, 56%);
 
   --nav_option_active_bg_color_active_LIGHT: hsl(3, 77%, 44%);
+  --nav_option_active_bg_color_active_hover_LIGHT: hsl(3, 71%, 56%);
   --nav_option_active_font_color_active_LIGHT: hsl(200, 60%, 99%);
 }
 
@@ -25,38 +29,75 @@ body {
 }
 
 main {
-  margin: 2rem auto;
-  padding-top: 2rem;
+  margin: 0 auto;
   width: 85%;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 nav h1 {
   color: var(--nav_title_color_LIGHT);
+  font-size: 2rem;
 }
 
 nav .menu_options button {
   cursor: pointer;
   padding: .6rem .8rem;
-  border: 1px solid var(--nav_option_border_color);
+  border: 1px solid var(--nav_option_border_color_LIGHT);
   border-radius: 20px;
   background-color: var(--nav_option_bg_color_LIGHT);
+  transition: .4s ease color, .4s ease border;
+}
+
+nav .menu_options button:not(.active):hover {
+  color: var(--nav_option_font_color_hover_LIGHT);
+  border: 1px solid var(--nav_option_border_color_hover_LIGHT);
+}
+
+nav .menu_options button:not(.active):focus {
+  outline-color: var(--nav_option_focus_LIGHT);
 }
 
 nav .menu_options .active {
   background-color: var(--nav_option_active_bg_color_active_LIGHT);
   color: var(--nav_option_active_font_color_active_LIGHT);
   border: none;
+  transition: .4s ease background-color;
+}
+
+nav .menu_options .active:hover {
+  background-color: var(--nav_option_active_bg_color_active_hover_LIGHT);
+}
+
+nav .menu_options .active:focus {
+  outline-offset: .15rem;
+  outline: 1px solid var(--nav_option_focus_LIGHT);
 }
 
 nav .menu_options button:not(:last-child) {
   margin-right: 1rem;
 }
 
+.cards_section {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .dark_mode {
   background: var(--background_bg_gradient_DARK);
+}
+
+@media screen and (max-width: 476px) {
+  .cards_section, nav {
+    flex-direction: column;
+  }
 }

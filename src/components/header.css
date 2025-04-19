@@ -3,6 +3,9 @@
     --header_bg_color_DARK: hsla(225, 23%, 24%, 0.6);
 
     --button_bg_color_LIGHT: hsl(0, 0%, 93%);
+    --button_bg_color_hover_LIGHT: hsl(0, 0%, 78%);
+    --button_focus_LIGHT: hsl(3, 71%, 56%);
+
     --button_bg_color_DARK: hsla(226, 11%, 37%, 0.2);
 }
 
@@ -18,10 +21,20 @@
 }
 
 .header button {
+    cursor: pointer;
     background-color: var(--button_bg_color_LIGHT);
     padding: .4rem .6rem;
     border: none;
     border-radius: 10px;
+    transition: .4s ease background-color;
+}
+
+.header button:hover {
+    background-color: var(--button_bg_color_hover_LIGHT);
+}
+
+.header button:focus {
+    outline-color: var(--button_focus_LIGHT);
 }
 
 .dark_mode .header {
