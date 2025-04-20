@@ -3,7 +3,13 @@
 
     --remove_button_border_color_LIGHT: hsl(0, 0%, 78%);
     --remove_button_hover_bg_color: hsl(3, 77%, 44%);
-    --remove_button_focus_bg_color: hsl(3, 71%, 56%);
+    --remove_button_hover_font_color: hsl(200, 60%, 99%);
+
+    --focus_bg_color: hsl(3, 71%, 56%);
+    
+    --check_label_bg_color: hsl(200, 60%, 99%);
+    --check_container_checked: hsl(3, 77%, 44%);
+    --check_container_not_checked: hsl(0, 0%, 78%);
 }
 
 .card {
@@ -47,10 +53,59 @@
 
 .card .options button:hover {
     background-color: var(--remove_button_hover_bg_color);
-    color: hsl(200, 60%, 99%);
+    color: var(--remove_button_hover_font_color);
     border: 1px solid transparent;
 } 
 
-.card .options button:focus {
-    outline-color: var(--remove_button_focus_bg_color);
+.card .options button:focus, .check:focus {
+    outline-color: var(--focus_bg_color);
+    outline-offset: .15rem;
+}
+
+.card .options .check {
+    position: relative;
+    width: 3rem;
+    height: 1.6rem;
+    border-radius: 20px;
+}
+
+.card .options .check label {
+    width: 40%;
+    height: 75%;
+    transform: translate(0, -50%);
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    background-color: var(--check_label_bg_color);
+}
+
+.label_checked  {
+    right: 10%;
+}
+
+.label_not_checked {
+    left: 10%;
+}
+
+.check_container_checked   {
+    background-color: var(--check_container_checked);
+}
+
+.check_container__not_checked   {
+    background-color: var(--check_container_not_checked);
+}
+
+.card .options .check input {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+
+@media screen and (max-width:  476px) {
+    .card .content .text p {
+        padding-top: .2rem;
+    }
 }
