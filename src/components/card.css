@@ -1,15 +1,36 @@
 :root {
     --card_bg_color_LIGHT: hsl(200, 60%, 99%);
+    --card_bg_color_DARK: hsl(226, 25%, 17%);
+
+    --card_border_color_DARK: hsl(226, 11%, 37%);
+
+    --name_font_color_DARK: hsl(200, 60%, 99%);
+    --description_font_color_DARK: hsl(0, 0%, 78%);
+    --remove_button_font_color_DARK: hsl(200, 60%, 99%);
 
     --remove_button_border_color_LIGHT: hsl(0, 0%, 78%);
-    --remove_button_hover_bg_color: hsl(3, 77%, 44%);
-    --remove_button_hover_font_color: hsl(200, 60%, 99%);
+    --remove_button_hover_bg_color_LIGHT: hsl(3, 77%, 44%);
+    --remove_button_hover_font_color_LIGHT: hsl(200, 60%, 99%);
 
-    --focus_bg_color: hsl(3, 71%, 56%);
-    
+    --remove_button_border_color_DARK: hsl(226, 11%, 37%);
+    --remove_button_hover_bg_color_DARK: hsl(3, 86%, 64%);
+    --remove_button_hover_font_color_DARK: hsl(227, 75%, 14%);
+
+    --focus_bg_color_LIGHT: hsl(3, 71%, 56%);
+    --focus_bg_color_DARK: hsl(3, 86%, 64%);
+
     --check_label_bg_color: hsl(200, 60%, 99%);
-    --check_container_checked: hsl(3, 77%, 44%);
-    --check_container_not_checked: hsl(0, 0%, 78%);
+
+    --check_container_checked_LIGHT: hsl(3, 77%, 44%);
+    --check_container_checked_LIGHT_hover: hsl(3, 71%, 56%);
+
+    --check_container_checked_DARK: hsl(3, 86%, 64%);
+    --check_container_checked_DARK_hover: hsl(3, 71%, 56%);
+
+    --check_container_not_checked_LIGHT: hsl(0, 0%, 78%);
+
+    --check_container_not_checked_DARK: hsl(226, 11%, 37%);
+    --check_container_not_checked_DARK_hover: hsl(225, 23%, 24%);
 }
 
 .card {
@@ -52,13 +73,14 @@
 }
 
 .card .options button:hover {
-    background-color: var(--remove_button_hover_bg_color);
-    color: var(--remove_button_hover_font_color);
+    background-color: var(--remove_button_hover_bg_color_LIGHT);
+    color: var(--remove_button_hover_font_color_LIGHT);
     border: 1px solid transparent;
-} 
+}
 
-.card .options button:focus, .check:focus {
-    outline-color: var(--focus_bg_color);
+.card .options button:focus,
+.check:focus {
+    outline: 1.5px solid var(--focus_bg_color_LIGHT);
     outline-offset: .15rem;
 }
 
@@ -79,7 +101,7 @@
     background-color: var(--check_label_bg_color);
 }
 
-.label_checked  {
+.label_checked {
     right: 10%;
 }
 
@@ -87,12 +109,16 @@
     left: 10%;
 }
 
-.check_container_checked   {
-    background-color: var(--check_container_checked);
+.check_container_checked {
+    background-color: var(--check_container_checked_LIGHT);
 }
 
-.check_container__not_checked   {
-    background-color: var(--check_container_not_checked);
+.check_container_checked:hover {
+    background-color: var(--check_container_checked_LIGHT_hover);
+}
+
+.check_container__not_checked {
+    background-color: var(--check_container_not_checked_LIGHT);
 }
 
 .card .options .check input {
@@ -104,7 +130,56 @@
     opacity: 0;
 }
 
-@media screen and (max-width:  476px) {
+
+/* DARK MODE */
+
+
+.dark_mode .card {
+    background-color: var(--card_bg_color_DARK);
+    border: 1px solid var(--card_border_color_DARK);
+}
+
+.dark_mode .card strong {
+    color: var(--name_font_color_DARK);
+}
+
+.dark_mode .card p {
+    color: var(--description_font_color_DARK);
+}
+
+.dark_mode .card button {
+    border: 1px solid var(--remove_button_border_color_DARK);
+    color: var(--remove_button_font_color_DARK);
+}
+
+.dark_mode .card .options button:focus,
+.check:focus {
+    outline: 1.5px solid var(--focus_bg_color_DARK);
+    outline-offset: .15rem;
+}
+
+.dark_mode .card button:hover {
+    color: var(--remove_button_hover_font_color_DARK);
+    background-color: var(--remove_button_hover_bg_color_DARK);
+}
+
+.dark_mode .check_container_checked {
+    background-color: var(--check_container_checked_DARK);
+}
+
+.dark_mode .check_container_checked:hover {
+    background-color: var(--check_container_checked_DARK_hover);
+}
+
+.dark_mode .check_container__not_checked {
+    background-color: var(--check_container_not_checked_DARK);
+}
+
+.dark_mode .check_container__not_checked:hover {
+    background-color: var(--check_container_not_checked_DARK_hover);
+}
+
+@media screen and (max-width: 476px) {
     .card .content .text p {
         padding-top: .2rem;
     }

@@ -3,6 +3,7 @@
   --background_bg_gradient_LIGHT: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
 
   --nav_title_color_LIGHT: hsl(227, 75%, 14%);
+  --nav_title_color_DARK: hsl(200, 60%, 99%);
   --nav_option_border_color_LIGHT: hsl(0, 0%, 78%);
 
   --nav_option_bg_color_LIGHT: hsl(200, 60%, 99%);
@@ -94,6 +95,15 @@ nav .menu_options button:not(:last-child) {
 
 .dark_mode {
   background: var(--background_bg_gradient_DARK);
+}
+
+.dark_mode nav h1 {
+  color: var(--nav_title_color_DARK);
+}
+
+nav .menu_options button {
+  border: 1px solid var(--nav_option_border_color_LIGHT);
+  background-color: var(--nav_option_bg_color_LIGHT);
 }
 
 @media screen and (max-width: 476px) {
