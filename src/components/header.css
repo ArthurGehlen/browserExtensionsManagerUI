@@ -5,6 +5,7 @@
     --button_bg_color_LIGHT: hsl(0, 0%, 93%);
     --button_bg_color_hover_LIGHT: hsl(0, 0%, 78%);
     --button_focus_LIGHT: hsl(3, 71%, 56%);
+    --button_focus_DARK: hsl(3, 86%, 64%);
 
     --button_bg_color_DARK: hsla(226, 11%, 37%, 0.2);
 }
@@ -43,4 +44,9 @@
 
 .dark_mode .header button {
     background-color: var(--button_bg_color_DARK);
+}
+
+.dark_mode .header button:focus {
+    outline: 1px solid var(--nav_option_focus_DARK);
+    outline-offset: .2rem;
 }

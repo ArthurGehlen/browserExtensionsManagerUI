@@ -7,13 +7,21 @@
   --nav_option_border_color_LIGHT: hsl(0, 0%, 78%);
 
   --nav_option_bg_color_LIGHT: hsl(200, 60%, 99%);
+  --nav_option_bg_color_DARK: hsl(226, 11%, 37%);
+
   --nav_option_border_color_hover_LIGHT: hsl(217, 61%, 90%);
   --nav_option_font_color_hover_LIGHT: hsl(226, 11%, 37%);
+
   --nav_option_focus_LIGHT: hsl(3, 71%, 56%);
+  --nav_option_focus_DARK: hsl(3, 86%, 64%);
 
   --nav_option_active_bg_color_active_LIGHT: hsl(3, 77%, 44%);
   --nav_option_active_bg_color_active_hover_LIGHT: hsl(3, 71%, 56%);
   --nav_option_active_font_color_active_LIGHT: hsl(200, 60%, 99%);
+
+  --nav_option_active_bg_color_active_DARK: hsl(3, 86%, 64%);
+  --nav_option_active_bg_color_active_hover_DARK: hsl(3, 71%, 56%);
+  --nav_option_active_font_color_active_DARK: hsl(227, 75%, 14%);
 }
 
 * {
@@ -71,6 +79,11 @@ nav .menu_options .active {
   transition: .4s ease background-color;
 }
 
+nav .menu_options button {
+  border: 1px solid var(--nav_option_border_color_LIGHT);
+  background-color: var(--nav_option_bg_color_LIGHT);
+}
+
 nav .menu_options .active:hover {
   background-color: var(--nav_option_active_bg_color_active_hover_LIGHT);
 }
@@ -93,6 +106,10 @@ nav .menu_options button:not(:last-child) {
   gap: 1rem;
 }
 
+
+/* DARK THEME */
+
+
 .dark_mode {
   background: var(--background_bg_gradient_DARK);
 }
@@ -101,9 +118,28 @@ nav .menu_options button:not(:last-child) {
   color: var(--nav_title_color_DARK);
 }
 
-nav .menu_options button {
-  border: 1px solid var(--nav_option_border_color_LIGHT);
-  background-color: var(--nav_option_bg_color_LIGHT);
+.dark_mode nav .menu_options button:focus  {
+  outline: 1px solid var(--nav_option_focus_DARK);
+  outline-offset: .2rem;
+}
+
+.dark_mode .active {
+  background-color: var(--nav_option_active_bg_color_active_DARK) !important;
+  color: var(--nav_option_active_font_color_active_DARK) !important;
+}
+
+.dark_mode .active:hover  {
+  background-color: var(--nav_option_active_bg_color_active_hover_DARK) !important;
+}
+
+.dark_mode nav .menu_options button:not(.active) {
+  background-color: hsl(225, 23%, 24%);
+  color: hsl(200, 60%, 99%);
+  border: 1px solid hsl(226, 11%, 37%)!important;
+}
+
+.dark_mode nav .menu_options button:not(.active):hover {
+  background-color: var(--nav_option_bg_color_DARK);
 }
 
 @media screen and (max-width: 476px) {
