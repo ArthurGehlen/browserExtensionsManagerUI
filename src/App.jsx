@@ -1,31 +1,18 @@
 // Components
 import Header from './components/Header'
 import Card from './components/Card'
+import CardsSection from './components/CardsSection'
 
 // Utils
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 function App() {
   const [activeFilter, setActiveFilter] = useState('All')
-  const [data, setData] = useState([])
-
+  
   const handle_filter_click = (filter) => {
     setActiveFilter(filter)
   }
-
-  useEffect(() => {
-    fetch('data.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    })
-      .then(response => response.json())
-      .then(json_data => {
-        setData(json_data)
-      })
-  }, [])
 
   return (
     <>
@@ -59,17 +46,7 @@ function App() {
           </div>
         </nav>
 
-        <section className='cards_section'>
-          {data.length != 0 && data.map((card) => (
-            <Card
-              key={card.name}
-              icon={card.logo}
-              name={card.name}
-              description={card.description}
-              is_active={card.isActive}
-            />
-          ))}
-        </section>
+        <CardsSection type={activeFilter} />
       </main>
     </>
   )
