@@ -100,7 +100,6 @@ nav .menu_options button:not(:last-child) {
 .cards_section {
   margin-top: 1.5rem;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
 }

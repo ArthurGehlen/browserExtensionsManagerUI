@@ -8,12 +8,7 @@ function CardsSection({ type }) {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch('data.json', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
+        fetch(import.meta.env.BASE_URL + 'data.json')
             .then(response => response.json())
             .then(json_data => {
                 setData(json_data)
