@@ -1,6 +1,5 @@
 // Components
 import Header from './components/Header'
-import Card from './components/Card'
 import CardsSection from './components/CardsSection'
 
 // Utils
