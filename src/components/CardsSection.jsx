@@ -43,7 +43,7 @@ function CardsSection({ type }) {
                     description={card.description}
                     is_active={card.isActive}
                 />
-            ))} *
+            ))} 
         </section>
     )
 }
